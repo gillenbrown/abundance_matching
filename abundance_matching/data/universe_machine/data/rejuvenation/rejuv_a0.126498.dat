@@ -1,0 +1,35 @@
+#Observed stellar masses in Msun
+#Rejuvenation definition: at least 300Myr quenched, followed by at least 300Myr of star formation.
+#Quenched threshold: 1e-11/yr
+#Bestfit_Galaxy_Counts is the number of galaxies in the bin for the bestfit model.
+#Log10(SM) F_rejuv Err+ Err- SM_Left_Edge SM_Right_Edge Bestfit_Galaxy_Counts
+7.3 0 0 0 7.2 7.4 129700
+7.5 0 0 0 7.4 7.6 96322
+7.7 0 0 0 7.6 7.8 68082
+7.9 0 0 0 7.8 8 47212
+8.1 0 0 0 8 8.2 31616
+8.3 0 0 0 8.2 8.4 21054
+8.5 0 0 0 8.4 8.6 13686
+8.7 0 0 0 8.6 8.8 8666
+8.9 0 0 0 8.8 9 5643
+9.1 0 0 0 9 9.2 3432
+9.3 0 0 0 9.2 9.4 2128
+9.5 0 0 0 9.4 9.6 1229
+9.7 0 0 0 9.6 9.8 720
+9.9 0 0 0 9.8 10 411
+10.1 0 0 0 10 10.2 230
+10.3 0 0 0 10.2 10.4 94
+10.5 0 0 0 10.4 10.6 76
+10.7 0 0 0 10.6 10.8 34
+10.9 0 0 0 10.8 11 12
+11.1 0 0 0 11 11.2 5
+11.3 0 0 0 11.2 11.4 4
+11.5 0 0 0 11.4 11.6 0
+11.7 0 0 0 11.6 11.8 0
+11.9 0 0 0 11.8 12 0
+12.1 0 0 0 12 12.2 0
+12.3 0 0 0 12.2 12.4 0
+12.5 0 0 0 12.4 12.6 0
+12.7 0 0 0 12.6 12.8 0
+12.9 0 0 0 12.8 13 0
+13.1 0 0 0 13 13.2 0

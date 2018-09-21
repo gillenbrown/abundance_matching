@@ -1,0 +1,2 @@
+#Redshift Scale_Factor_Of_Snapshot_Used Actual_Redshift
+0 1.002310 -0.00230467619798269

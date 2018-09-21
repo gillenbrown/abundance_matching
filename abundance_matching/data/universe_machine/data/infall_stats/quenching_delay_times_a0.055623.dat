@@ -1,0 +1,41 @@
+#Observed stellar masses in Msun
+#Quenching delay times in Gyr.
+#MW Mass Range: 10^11.75 - 10^12.25 Msun.
+#Group Mass Range: 10^12.75 - 10^13.25 Msun.
+#Cluster Mass Range: 10^13.75 - 10^14.25 Msun.
+#Err+ and Err- are errors over all MCMC points.
+#+1 and -1 sigma are the 84th and 16th percentile ranges for galaxies in a single model.
+#All satellites selected at a=0.055623.
+#Quenched threshold: observed SSFR < 1e-11/yr
+#Bestfit_X_Counts is the number of quenched(all)/quenched after infall(sats) galaxies in the bin for the bestfit model.
+#SM Median_Quenching_Delay_Time(MW) Err+ Err- +1_sigma_Quenching_Delay_Time(MW) Err+ Err- -1_sigma_Quenching_Delay_Time(MW) Err+ Err- Median_Quenching_Delay_Time(GR) Err+ Err- +1_sigma_Quenching_Delay_Time(GR) Err+ Err- -1_sigma_Quenching_Delay_Time(GR) Err+ Err- Median_Quenching_Delay_Time(CL) Err+ Err- +1_sigma_Quenching_Delay_Time(CL) Err+ Err- -1_sigma_Quenching_Delay_Time(CL) Err+ Err- SM_Left SM_Right Bestfit_Galaxy_Counts Bestfit_Sats_MW_Counts Bestfit_Sats_GR_Counts Bestfit_Sats_Cluster_Counts
+7.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7.2 7.4 0 0 0 0
+7.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7.4 7.6 0 0 0 0
+7.7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7.6 7.8 0 0 0 0
+7.9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7.8 8 0 0 0 0
+8.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 8.2 0 0 0 0
+8.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8.2 8.4 0 0 0 0
+8.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8.4 8.6 0 0 0 0
+8.7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8.6 8.8 0 0 0 0
+8.9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8.8 9 0 0 0 0
+9.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 9.2 0 0 0 0
+9.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.2 9.4 0 0 0 0
+9.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.4 9.6 0 0 0 0
+9.7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.6 9.8 0 0 0 0
+9.9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.8 10 0 0 0 0
+10.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 10.2 0 0 0 0
+10.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10.2 10.4 0 0 0 0
+10.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10.4 10.6 0 0 0 0
+10.7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10.6 10.8 0 0 0 0
+10.9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10.8 11 0 0 0 0
+11.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 11.2 0 0 0 0
+11.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11.2 11.4 0 0 0 0
+11.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11.4 11.6 0 0 0 0
+11.7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11.6 11.8 0 0 0 0
+11.9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11.8 12 0 0 0 0
+12.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 12.2 0 0 0 0
+12.3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12.2 12.4 0 0 0 0
+12.5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12.4 12.6 0 0 0 0
+12.7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12.6 12.8 0 0 0 0
+12.9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12.8 13 0 0 0 0
+13.1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 13 13.2 0 0 0 0
