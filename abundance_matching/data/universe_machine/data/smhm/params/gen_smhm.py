@@ -1,12 +1,17 @@
 #!/usr/bin/python
 import sys
 import math
+import re
 
 if (len(sys.argv) < 3):
-    print("Usage: %s z parameter_file.txt" % sys.argv[0])
+    print("Usage: %s z smhm_parameter_file.txt" % sys.argv[0])
     quit()
 
 z = sys.argv[1]
+
+if (re.search('^uncertainties', sys.argv[2])):
+    print("Use gen_smhm_uncertainties.py instead for uncertainties_* files.");
+    quit()
 
 #Load params
 param_file = open(sys.argv[2], "r")
@@ -28,14 +33,17 @@ try:
     z = float(z)
 except:
     #print TeX
-    for x in allparams[0:8:1]:
-        sys.stdout.write('& $%.3f^{+%.3f}_{-%.3f}$' % tuple(float(y) for y in x[1:4]))
+    for x in allparams[0:10:1]:
+        x[3] = -float(x[3])
+        sys.stdout.write('& $%.3f^{%+.3f}_{%+.3f}$' % tuple(float(y) for y in x[1:4]))
     sys.stdout.write("\\\\\n & & & ")
-    for x in allparams[8:16:1]:
-        sys.stdout.write('& $%.3f^{+%.3f}_{-%.3f}$' % tuple(float(y) for y in x[1:4]))
-    sys.stdout.write("\\\\\n & & & ")    
-    for x in allparams[16:19:1]:
-        sys.stdout.write('& $%.3f^{+%.3f}_{-%.3f}$' % tuple(float(y) for y in x[1:4]))
+    for x in allparams[10:19:1]:
+        x[3] = -float(x[3])
+        sys.stdout.write('& $%.3f^{%+.3f}_{%+.3f}$' % tuple(float(y) for y in x[1:4]))
+#    sys.stdout.write("\\\\\n & & & ")    
+#    for x in allparams[16:19:1]:
+#        x[3] = -float(x[3])
+#        sys.stdout.write('& $%.3f^{%+.3f}_{%+.3f}$' % tuple(float(y) for y in x[1:4]))
     sys.stdout.write(' & %.0f' % float(allparams[19][1]))
     if (float(allparams[19][1])>200):
         sys.stdout.write('$\dag$')

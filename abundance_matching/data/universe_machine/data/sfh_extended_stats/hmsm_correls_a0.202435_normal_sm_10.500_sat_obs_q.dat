@@ -1,0 +1,48 @@
+#Delta_Time Ranked_Correl Ignore Ignore Ranked_Error Pearson_Correl Ignore Ignore Pearson_Error Counts
+#sm range: 10.25 - 10.75
+#HM    Stats: 1.636760e+12 (median) + 8.338300e+11  / - 6.325000e+11
+#SM    Stats: 2.493340e+10 (median) + 1.362240e+10  / - 5.160700e+09
+#ObsSM Stats: 2.503060e+10 (median) + 3.223010e+10  / - 1.211070e+10
+#VMP   Stats: 3.281000e+02 (median) + 6.591000e+01  / - 3.394000e+01
+#ICL   Stats: 1.296760e+08 (median) + 1.746170e+08  / - 1.112029e+08
+#SSFR  Stats: 1.314151e-12 (median) + 2.696702e-12  / - 8.961483e-13
+1.34402e+09 0.418421 0 0 #SE: 0.149316 #Pearson correl: 0.213667 0 0 #SE: 0.160602 #counts: 39
+1.31593e+09 0.418421 0 0 #SE: 0.149316 #Pearson correl: 0.213645 0 0 #SE: 0.160603 #counts: 39
+1.30148e+09 0.418421 0 0 #SE: 0.149316 #Pearson correl: 0.213497 0 0 #SE: 0.160609 #counts: 39
+1.28677e+09 0.418421 0 0 #SE: 0.149316 #Pearson correl: 0.213423 0 0 #SE: 0.160611 #counts: 39
+1.27181e+09 0.418421 0 0 #SE: 0.149316 #Pearson correl: 0.213121 0 0 #SE: 0.160622 #counts: 39
+1.25659e+09 0.417814 0 0 #SE: 0.149362 #Pearson correl: 0.213199 0 0 #SE: 0.160619 #counts: 39
+1.24111e+09 0.418016 0 0 #SE: 0.149347 #Pearson correl: 0.212994 0 0 #SE: 0.160627 #counts: 39
+1.2254e+09 0.418016 0 0 #SE: 0.149347 #Pearson correl: 0.212169 0 0 #SE: 0.160656 #counts: 39
+1.20944e+09 0.418016 0 0 #SE: 0.149347 #Pearson correl: 0.211354 0 0 #SE: 0.160685 #counts: 39
+1.19325e+09 0.418826 0 0 #SE: 0.149285 #Pearson correl: 0.210504 0 0 #SE: 0.160715 #counts: 39
+1.17682e+09 0.418623 0 0 #SE: 0.149301 #Pearson correl: 0.208593 0 0 #SE: 0.160783 #counts: 39
+1.16016e+09 0.418826 0 0 #SE: 0.149285 #Pearson correl: 0.207405 0 0 #SE: 0.160824 #counts: 39
+1.13474e+09 0.415385 0 0 #SE: 0.149545 #Pearson correl: 0.205964 0 0 #SE: 0.160874 #counts: 39
+1.10883e+09 0.408907 0 0 #SE: 0.150027 #Pearson correl: 0.20368 0 0 #SE: 0.160953 #counts: 39
+1.08242e+09 0.410121 0 0 #SE: 0.149937 #Pearson correl: 0.197348 0 0 #SE: 0.161166 #counts: 39
+1.05553e+09 0.408502 0 0 #SE: 0.150056 #Pearson correl: 0.190616 0 0 #SE: 0.161385 #counts: 39
+1.02816e+09 0.403036 0 0 #SE: 0.150455 #Pearson correl: 0.187048 0 0 #SE: 0.161497 #counts: 39
+1.00034e+09 0.401822 0 0 #SE: 0.150543 #Pearson correl: 0.181763 0 0 #SE: 0.16166 #counts: 39
+9.72049e+08 0.394737 0 0 #SE: 0.151049 #Pearson correl: 0.17337 0 0 #SE: 0.161909 #counts: 39
+9.43314e+08 0.38664 0 0 #SE: 0.151614 #Pearson correl: 0.167144 0 0 #SE: 0.162086 #counts: 39
+9.14137e+08 0.387045 0 0 #SE: 0.151586 #Pearson correl: 0.158215 0 0 #SE: 0.162328 #counts: 39
+8.84525e+08 0.373482 0 0 #SE: 0.152503 #Pearson correl: 0.150866 0 0 #SE: 0.162517 #counts: 39
+8.54486e+08 0.352227 0 0 #SE: 0.153863 #Pearson correl: 0.138687 0 0 #SE: 0.16281 #counts: 39
+8.24025e+08 0.33583 0 0 #SE: 0.154851 #Pearson correl: 0.125309 0 0 #SE: 0.163103 #counts: 39
+7.93148e+08 0.314372 0 0 #SE: 0.156064 #Pearson correl: 0.11521 0 0 #SE: 0.163304 #counts: 39
+7.61864e+08 0.287045 0 0 #SE: 0.157481 #Pearson correl: 0.0931424 0 0 #SE: 0.163684 #counts: 39
+7.30176e+08 0.261336 0 0 #SE: 0.158686 #Pearson correl: 0.0784286 0 0 #SE: 0.163893 #counts: 39
+6.9809e+08 0.241903 0 0 #SE: 0.159516 #Pearson correl: 0.079355 0 0 #SE: 0.163881 #counts: 39
+6.49233e+08 0.223684 0 0 #SE: 0.160233 #Pearson correl: 0.114901 0 0 #SE: 0.16331 #counts: 39
+5.99503e+08 0.242105 0 0 #SE: 0.159508 #Pearson correl: 0.15754 0 0 #SE: 0.162346 #counts: 39
+5.48936e+08 0.261134 0 0 #SE: 0.158695 #Pearson correl: 0.183149 0 0 #SE: 0.161618 #counts: 39
+4.97528e+08 0.334008 0 0 #SE: 0.154958 #Pearson correl: 0.240405 0 0 #SE: 0.159578 #counts: 39
+4.45316e+08 0.498178 0 0 #SE: 0.142546 #Pearson correl: 0.326716 0 0 #SE: 0.155377 #counts: 39
+3.92295e+08 0.507692 0 0 #SE: 0.141636 #Pearson correl: 0.362069 0 0 #SE: 0.153245 #counts: 39
+3.385e+08 0.515992 0 0 #SE: 0.140823 #Pearson correl: 0.29991 0 0 #SE: 0.156831 #counts: 39
+2.83924e+08 0.641903 0 0 #SE: 0.126059 #Pearson correl: 0.222554 0 0 #SE: 0.160276 #counts: 39
+2.28603e+08 0.65668 0 0 #SE: 0.123985 #Pearson correl: 0.235976 0 0 #SE: 0.159756 #counts: 39
+1.72528e+08 0.59332 0 0 #SE: 0.132336 #Pearson correl: 0.0862225 0 0 #SE: 0.163787 #counts: 39
+1.15735e+08 0.619636 0 0 #SE: 0.129035 #Pearson correl: -0.00407748 0 0 #SE: 0.164398 #counts: 39
+5.82139e+07 0.812146 0 0 #SE: 0.0959193 #Pearson correl: 0.0174663 0 0 #SE: 0.164374 #counts: 39

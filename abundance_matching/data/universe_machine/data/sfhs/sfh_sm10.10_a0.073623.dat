@@ -1,22 +1,22 @@
 #Observed stellar mass range: 10 < log10(M*/Msun) < 10.2
 #Quenched threshold: Obs. SFR / Obs. SM < 1e-11 / yr
 #SFHs in units of observed Msun/yr.
-#True SFHs rescaled by average systematic offset of -0.276922 dex to be consistent with average observed stellar mass in bin.
+#True SFHs rescaled by average systematic offset of -0.0217955 dex to be consistent with average observed stellar mass in bin.
 #See documentation for explanation of true vs. observed SFRs and SMs.
-#Bestfit galaxies in bin: 1
-#Bestfit SF galaxies in bin: 1
+#Bestfit galaxies in bin: 0
+#Bestfit SF galaxies in bin: 0
 #Bestfit Q galaxies in bin: 0
-#Bestfit central galaxies in bin: 1
+#Bestfit central galaxies in bin: 0
 #Bestfit satellite galaxies in bin: 0
 #Avg_scale_factor <SFH_all> Err+ Err- <SFH_SF> Err+ Err- <SFH_Q> Err+ Err- <SFH_Cen> Err+ Err- <SFH_Sat> Err+ Err- Scale_factor_begin Scale_factor_end
 0.028936 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.000000 0.057873
 0.059561 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.057873 0.061248
 0.062373 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.061248 0.063498
-0.064623 0.990438 0.454957 0.990438 0.990438 0.454957 0.990438 0 0 0 0.990438 0.454957 0.990438 0 0 0 0.063498 0.065748
-0.066873 4.05164 2.18115 4.05164 4.05164 1.85327 4.05164 0 0 0 4.05164 2.18115 4.05164 0 0 0 0.065748 0.067998
-0.069123 9.65242 3.74305 9.65242 9.65242 0.371708 9.65242 0 0 0 9.65242 3.74305 9.65242 0 0 0 0.067998 0.070248
-0.071373 75.4407 -13.083 75.4407 75.4407 -22.0044 75.4407 0 0 0 75.4407 -13.083 75.4407 0 0 0 0.070248 0.072498
-0.073623 199.854 -129.679 199.854 199.854 -103.85 199.854 0 0 0 199.854 -129.679 199.854 0 0 0 0.072498 0.074748
+0.064623 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.063498 0.065748
+0.066873 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.065748 0.067998
+0.069123 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.067998 0.070248
+0.071373 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.070248 0.072498
+0.073623 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.072498 0.074748
 0.075873 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.074748 0.076998
 0.078123 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.076998 0.079248
 0.080373 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.079248 0.081498

@@ -1,19 +1,19 @@
 #Observed stellar mass range: 8.6 < log10(M*/Msun) < 8.8
 #Quenched threshold: Obs. SFR / Obs. SM < 1e-11 / yr
 #SFHs in units of observed Msun/yr.
-#True SFHs rescaled by average systematic offset of -0.277772 dex to be consistent with average observed stellar mass in bin.
+#True SFHs rescaled by average systematic offset of -0.0219931 dex to be consistent with average observed stellar mass in bin.
 #See documentation for explanation of true vs. observed SFRs and SMs.
-#Bestfit galaxies in bin: 38
-#Bestfit SF galaxies in bin: 37
-#Bestfit Q galaxies in bin: 1
-#Bestfit central galaxies in bin: 38
+#Bestfit galaxies in bin: 0
+#Bestfit SF galaxies in bin: 0
+#Bestfit Q galaxies in bin: 0
+#Bestfit central galaxies in bin: 0
 #Bestfit satellite galaxies in bin: 0
 #Avg_scale_factor <SFH_all> Err+ Err- <SFH_SF> Err+ Err- <SFH_Q> Err+ Err- <SFH_Cen> Err+ Err- <SFH_Sat> Err+ Err- Scale_factor_begin Scale_factor_end
-0.028936 0.465929 0.109174 0.465929 0.478522 0.0615103 0.478522 0 0.101118 0 0.465929 0.109174 0.465929 0 0 0 0.000000 0.057873
-0.059561 4.13571 1.16568 4.13571 3.90725 1.4781 3.90725 12.5887 -5.59159 12.5887 4.13571 1.16568 4.13571 0 0 0 0.057873 0.061248
-0.062373 8.08838 2.2861 8.08838 8.09126 0.974258 8.09126 7.98203 10.1862 7.98203 8.08838 2.2861 8.08838 0 0 0 0.061248 0.063498
-0.064623 10.9606 2.49037 10.9606 10.2861 2.06638 10.2861 35.9177 -14.2106 35.9177 10.9606 2.49037 10.9606 0 0 0 0.063498 0.065748
-0.066873 13.1909 2.69242 13.1909 13.5474 4.26123 13.5474 0 0.000152124 0 13.1909 2.69242 13.1909 0 0 0 0.065748 0.067998
+0.028936 0 0.756425 0 0 0.736072 0 0 0 0 0 0.756425 0 0 0 0 0.000000 0.057873
+0.059561 0 3.75549 0 0 3.65678 0 0 0 0 0 3.75549 0 0 0 0 0.057873 0.061248
+0.062373 0 6.62815 0 0 6.62815 0 0 0 0 0 6.62815 0 0 0 0 0.061248 0.063498
+0.064623 0 8.83171 0 0 9.18773 0 0 0 0 0 8.83171 0 0 0 0 0.063498 0.065748
+0.066873 0 13.1813 0 0 13.2453 0 0 0 0 0 13.1813 0 0 0 0 0.065748 0.067998
 0.069123 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.067998 0.070248
 0.071373 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.070248 0.072498
 0.073623 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.072498 0.074748

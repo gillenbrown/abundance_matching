@@ -1,0 +1,20 @@
+#Type(SFH/ICLH/SM_mp/ICL_mp/HM_mp/SFR_mp/SSFR_mp/ICL_ratio_mp/SM_HM_ratio_mp/fq_mp) Scale Median 1Sig+ 1Sig-
+#Halos/galaxies at a=0.668185 (z=0.496592)
+#SF Units: 1/yr
+#SFH: Star formation history of present-day stellar population (including merged galaxies).
+#ICLH: Star formation history of present-day ICL.
+#SM_mp: Stellar mass of main progenitor.
+#ICL_mp: ICL of main progenitor.
+#HM_mp: Peak halo mass of main progenitor [Msun/h].
+#SFR_mp: Star formation rate of main progenitor.
+#SSFR_mp: Specific star formation rate of main progenitor.
+#ICL_ratio_mp: ICL ratio (ICL/SM) of main progenitor.
+#SM_HM_ratio_mp: SM/HM ratio of main progenitor.
+#SF rates divided by final a=0.668185 (z=0.496592) stellar mass
+#sm range: 11.75 - 12.25
+#HM    Stats: 0.000000e+00 (median) + 0.000000e+00  / - 0.000000e+00
+#SM    Stats: 0.000000e+00 (median) + 0.000000e+00  / - 0.000000e+00
+#ObsSM Stats: 0.000000e+00 (median) + 0.000000e+00  / - 0.000000e+00
+#VMP   Stats: 0.000000e+00 (median) + 0.000000e+00  / - 0.000000e+00
+#ICL   Stats: 0.000000e+00 (median) + 0.000000e+00  / - 0.000000e+00
+#SSFR  Stats: 0.000000e+00 (median) + 0.000000e+00  / - 0.000000e+00

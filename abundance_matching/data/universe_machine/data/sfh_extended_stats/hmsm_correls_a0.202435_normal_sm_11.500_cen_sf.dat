@@ -1,0 +1,48 @@
+#Delta_Time Ranked_Correl Ignore Ignore Ranked_Error Pearson_Correl Ignore Ignore Pearson_Error Counts
+#sm range: 11.25 - 11.75
+#HM    Stats: 5.063240e+12 (median) + 9.544102e+11  / - 2.658830e+12
+#SM    Stats: 1.993900e+11 (median) + 1.460000e+10  / - 8.483996e+09
+#ObsSM Stats: 1.874670e+11 (median) + 5.379800e+11  / - 4.918100e+10
+#VMP   Stats: 4.463700e+02 (median) + 8.201001e+01  / - 9.210001e+01
+#ICL   Stats: 3.524200e+08 (median) + 1.465020e+09  / - 2.417620e+08
+#SSFR  Stats: 1.374436e-09 (median) + 1.953103e-09  / - 7.683401e-10
+1.34402e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530384 0 0 #SE: 0.489453 #counts: 5
+1.31593e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530384 0 0 #SE: 0.489453 #counts: 5
+1.30148e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.529703 0 0 #SE: 0.489699 #counts: 5
+1.28677e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530085 0 0 #SE: 0.489561 #counts: 5
+1.27181e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530329 0 0 #SE: 0.489473 #counts: 5
+1.25659e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530851 0 0 #SE: 0.489284 #counts: 5
+1.24111e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530882 0 0 #SE: 0.489273 #counts: 5
+1.2254e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.531559 0 0 #SE: 0.489028 #counts: 5
+1.20944e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.531476 0 0 #SE: 0.489058 #counts: 5
+1.19325e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530837 0 0 #SE: 0.489289 #counts: 5
+1.17682e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530414 0 0 #SE: 0.489442 #counts: 5
+1.16016e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530157 0 0 #SE: 0.489535 #counts: 5
+1.13474e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.529388 0 0 #SE: 0.489812 #counts: 5
+1.10883e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.52673 0 0 #SE: 0.490767 #counts: 5
+1.08242e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.530957 0 0 #SE: 0.489246 #counts: 5
+1.05553e+09 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.531839 0 0 #SE: 0.488927 #counts: 5
+1.02816e+09 0.6 0 0 #SE: 0.46188 #Pearson correl: 0.532654 0 0 #SE: 0.488631 #counts: 5
+1.00034e+09 0.6 0 0 #SE: 0.46188 #Pearson correl: 0.522698 0 0 #SE: 0.492201 #counts: 5
+9.72049e+08 0.6 0 0 #SE: 0.46188 #Pearson correl: 0.514402 0 0 #SE: 0.495106 #counts: 5
+9.43314e+08 0.6 0 0 #SE: 0.46188 #Pearson correl: 0.511233 0 0 #SE: 0.496199 #counts: 5
+9.14137e+08 0.7 0 0 #SE: 0.412311 #Pearson correl: 0.47515 0 0 #SE: 0.508013 #counts: 5
+8.84525e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.446714 0 0 #SE: 0.516542 #counts: 5
+8.54486e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.415674 0 0 #SE: 0.525108 #counts: 5
+8.24025e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.405545 0 0 #SE: 0.527742 #counts: 5
+7.93148e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.418433 0 0 #SE: 0.524377 #counts: 5
+7.61864e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.425418 0 0 #SE: 0.5225 #counts: 5
+7.30176e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.428176 0 0 #SE: 0.521749 #counts: 5
+6.9809e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.414552 0 0 #SE: 0.525403 #counts: 5
+6.49233e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.432043 0 0 #SE: 0.520685 #counts: 5
+5.99503e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.485068 0 0 #SE: 0.504879 #counts: 5
+5.48936e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.517727 0 0 #SE: 0.49395 #counts: 5
+4.97528e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.538766 0 0 #SE: 0.486392 #counts: 5
+4.45316e+08 0.5 0 0 #SE: 0.5 #Pearson correl: 0.431201 0 0 #SE: 0.520918 #counts: 5
+3.92295e+08 -0.3 0 0 #SE: 0.550757 #Pearson correl: -0.0900767 0 0 #SE: 0.575003 #counts: 5
+3.385e+08 -0.3 0 0 #SE: 0.550757 #Pearson correl: -0.468602 0 0 #SE: 0.510037 #counts: 5
+2.83924e+08 -0.3 0 0 #SE: 0.550757 #Pearson correl: -0.508154 0 0 #SE: 0.497252 #counts: 5
+2.28603e+08 -0.3 0 0 #SE: 0.550757 #Pearson correl: -0.572039 0 0 #SE: 0.473558 #counts: 5
+1.72528e+08 -0.3 0 0 #SE: 0.550757 #Pearson correl: -0.797214 0 0 #SE: 0.348545 #counts: 5
+1.15735e+08 -0.7 0 0 #SE: 0.412311 #Pearson correl: -0.876775 0 0 #SE: 0.277648 #counts: 5
+5.82139e+07 -0.7 0 0 #SE: 0.412311 #Pearson correl: -0.808864 0 0 #SE: 0.339479 #counts: 5

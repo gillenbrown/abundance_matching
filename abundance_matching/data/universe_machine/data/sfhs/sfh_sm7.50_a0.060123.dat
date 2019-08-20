@@ -1,16 +1,16 @@
 #Observed stellar mass range: 7.4 < log10(M*/Msun) < 7.6
 #Quenched threshold: Obs. SFR / Obs. SM < 1e-11 / yr
 #SFHs in units of observed Msun/yr.
-#True SFHs rescaled by average systematic offset of -0.278621 dex to be consistent with average observed stellar mass in bin.
+#True SFHs rescaled by average systematic offset of -0.0221906 dex to be consistent with average observed stellar mass in bin.
 #See documentation for explanation of true vs. observed SFRs and SMs.
-#Bestfit galaxies in bin: 33
-#Bestfit SF galaxies in bin: 32
-#Bestfit Q galaxies in bin: 1
-#Bestfit central galaxies in bin: 33
+#Bestfit galaxies in bin: 0
+#Bestfit SF galaxies in bin: 0
+#Bestfit Q galaxies in bin: 0
+#Bestfit central galaxies in bin: 0
 #Bestfit satellite galaxies in bin: 0
 #Avg_scale_factor <SFH_all> Err+ Err- <SFH_SF> Err+ Err- <SFH_Q> Err+ Err- <SFH_Cen> Err+ Err- <SFH_Sat> Err+ Err- Scale_factor_begin Scale_factor_end
-0.028936 0.019104 0.098215 0.0137998 0.0154106 0.100035 0.0112909 0.137295 -0.0230692 0.137295 0.019104 0.098215 0.0137462 0 0 0 0.000000 0.057873
-0.059561 2.24291 0.647689 2.10795 2.313 0.577599 2.17804 4.4472e-05 -4.4472e-05 4.4472e-05 2.24291 0.647689 2.10795 0 0 0 0.057873 0.061248
+0.028936 0 0.113226 0 0 0.113226 0 0 0 0 0 0.113226 0 0 0 0 0.000000 0.057873
+0.059561 0 2.03939 0 0 2.05069 0 0 0 0 0 2.03939 0 0 0 0 0.057873 0.061248
 0.062373 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.061248 0.063498
 0.064623 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.063498 0.065748
 0.066873 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.065748 0.067998

@@ -1,7 +1,7 @@
 #Observed stellar mass range: 10.4 < log10(M*/Msun) < 10.6
 #Quenched threshold: Obs. SFR / Obs. SM < 1e-11 / yr
 #SFHs in units of observed Msun/yr.
-#True SFHs rescaled by average systematic offset of -0.279188 dex to be consistent with average observed stellar mass in bin.
+#True SFHs rescaled by average systematic offset of -0.0223223 dex to be consistent with average observed stellar mass in bin.
 #See documentation for explanation of true vs. observed SFRs and SMs.
 #Bestfit galaxies in bin: 0
 #Bestfit SF galaxies in bin: 0

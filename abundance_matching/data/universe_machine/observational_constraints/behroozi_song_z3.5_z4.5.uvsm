@@ -1,7 +1,7 @@
 #zlow: 3.5
 #zhigh: 4.5
 #type: uvsm
-#ref: Behroozi et al. (2017); Song et al. (2015) http://lanl.arxiv.org/abs/1507.05636v2
+#ref: Behroozi, Wechsler, Hearin, Conroy (2019) https://arxiv.org/abs/1806.07893 ; Song et al. (2015) https://arxiv.org/abs/1507.05636v2
 -18.5 -18 8.4239114 0.3 0.3
 -19 -18.5 8.5201558 0.3 0.3
 -19.5 -19 8.7444346 0.3 0.3

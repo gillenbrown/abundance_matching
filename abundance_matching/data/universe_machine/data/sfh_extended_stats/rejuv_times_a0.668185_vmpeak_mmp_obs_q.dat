@@ -1,0 +1,2 @@
+#Only galaxies that have rejuvenated at least once and are currently obs. star-forming
+#vmpeak <QTime> AvgErr Median_QTime 1Sig+ 1Sig- <SFTime> AvgErr Median_SFTime 1Sig+ 1Sig- Counts
