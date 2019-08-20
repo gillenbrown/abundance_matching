@@ -1,7 +1,10 @@
 from astropy import cosmology
 import astropy.units as u
+from astropy import table
 import numpy as np
 import os
+import re
+
 from scipy import integrate
 
 
@@ -22,6 +25,41 @@ def z_to_a(z):
 def z_to_age(z):
     ages = [cosmology.Planck15.age(z_i).to("Myr") for z_i in z]
     return u.Quantity(ages)
+
+def find_a(filename):
+    # later we'll use a regular expression to search the files for the
+    # desired a, so set that up now
+    scale_re = re.compile("""a    # single a
+                             [01]  # either 0 or 1 (start of scale factor)
+                             \.    # single period
+                             \d*   # any number of digits
+                             [-\.] # either . or -, indicating new part of name
+                             """, re.VERBOSE)
+    # We get the 0th index since there will be only one match per file, and
+    # throw away the first and last characters (a and -.)
+    return re.findall(scale_re, filename)[0][1:-1]
+
+def find_closest(item, list_of_items):
+    # we assume the original list is strings, and is sorted
+    # first turn to floats
+    processed_list = [float(i) for i in list_of_items]
+
+    # first to some edge cases
+    if item < processed_list[0]:
+        return list_of_items[0]
+    elif item > processed_list[-1]:
+        return list_of_items[-1]
+    else:  # somewhere in the middle
+        for idx in range(len(processed_list) - 1):
+            if processed_list[idx] <= item < processed_list[idx + 1]:
+                # we have the bounding scale factors
+                diff_1 = abs(item - processed_list[idx])
+                diff_2 = abs(item - processed_list[idx + 1])
+                if diff_1 < diff_2:
+                    return list_of_items[idx]
+                else:
+                    return list_of_items[idx + 1]
+
 
 class Behroozi13(object):
     def __init__(self):
@@ -99,8 +137,84 @@ class Behroozi13(object):
         self.sfh_ages = z_to_age(self.sfh_z)
 
 class UniverseMachine(object):
-    def __init__(self):
+    data_dir = _get_data_path("universe_machine/data/")
+
+    def __init__(self, m_halo, m_stellar, z):
+        self.m_halo = m_halo
+        self.m_stellar = m_stellar
+        self.z = z
+        self.a = z_to_a(self.z)
         self.read_sfh()
+        self.read_smhm()
+
+    def read_smhm(self):
+        # According to the readme file, the direct SMHM measurements are in the 
+        # data/smhm/median_raw directory. Within this directory, the median
+        # values are in the `sm_hm_a*` files, while the scatter is in the
+        # `smhm_scatter_a*` files.
+        smhm_dir = self.data_dir + "smhm/median_raw/"
+        smhm_files = [f for f in os.listdir(smhm_dir)
+                      if f.startswith("smhm_a")]
+
+        # create dictionaries to store the eventual tables
+        self.smhm_table = dict()
+        self.smhm_scatter_table = dict()
+
+        for f in smhm_files:
+            this_a = find_a(f)
+
+            # Then use astropy to make tables out of those files
+            smhm_file = smhm_dir + "smhm_a{}.dat".format(this_a)
+            smhm_scatter_file = smhm_dir + "smhm_scatter_a{}.dat".format(this_a)
+
+            self.smhm_table[this_a] = table.Table.read(smhm_file,
+                                                       format="ascii")
+            self.smhm_scatter_table[this_a] = table.Table.read(smhm_scatter_file,
+                                                               format="ascii")
+
+    def get_smhm(self, z, galaxy_type):
+        """
+        Get the stellar mass halo mass ratio and its intrinsic scatter at a
+        given redshift
+
+        :param z: Redshift at which to get the SMHM ratio
+        :param galaxy_type: What kind of galaxies to select. Can be
+                            "All", "Cen", "Cen_SF", "Cen_Q", "Sat", "SF", "Q".
+        :return: A tuple of things. First is the redshift at which the SMHM
+                 relation was accessed. Next are the halo masses at which the
+                 SMHM relation is tabulated. The SM/HM ratio is next, with one
+                 item for each mass. Next are the upper and lower boundaries of
+                 the error region, which corresponds to the intrindic scatter
+                 in the SMHM relation.
+        """
+        a = z_to_a(z)
+        # the find closest function expects a sorted list
+        a_smhm = find_closest(a, sorted(list(self.smhm_table.keys())))
+        z_smhm = a_to_z(float(a_smhm))
+
+        colnames = {"All": "True_Med_All(22)",
+                    "Cen": "True_Cen(25)",
+                    "Cen_SF": "True_Cen_SF(28)",
+                    "Cen_Q": "True_Cen_Q(31)",
+                    "Sat": "True_Sat(34)",
+                    "SF": "True_Sat(37)",
+                    "Q": "True_Q(40)"}
+
+        colname = colnames[galaxy_type]
+
+        smhm_log = self.smhm_table[a_smhm][colname].data
+        # restrict to halo masses where the SMHM can be determined
+        good_idxs = np.where(smhm_log < 0)
+        smhm = 10 ** smhm_log[good_idxs]
+
+        halo_masses = 10 ** self.smhm_table[a_smhm]["HM(0)"].data[good_idxs]
+        scatter_log = self.smhm_scatter_table[a_smhm][colname].data[good_idxs]
+
+        # parse the scatter to be in linear space
+        hi_lim = 10**(smhm_log + scatter_log)
+        lo_lim = 10**(smhm_log - scatter_log)
+
+        return z_smhm, halo_masses, smhm, hi_lim, lo_lim
 
     def read_sfh(self):
         file = _get_data_path("universe_machine/data/sfhs/sfh_hm12.00_a1.002310.dat")
