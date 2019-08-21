@@ -4,6 +4,7 @@ from astropy import table
 import numpy as np
 import os
 import re
+import collections
 
 from scipy import integrate
 
@@ -27,17 +28,35 @@ def z_to_age(z):
     return u.Quantity(ages)
 
 def find_a(filename):
-    # later we'll use a regular expression to search the files for the
-    # desired a, so set that up now
+    # Use a regular expression
     scale_re = re.compile("""a    # single a
                              [01]  # either 0 or 1 (start of scale factor)
                              \.    # single period
-                             \d*   # any number of digits
-                             [-\.] # either . or -, indicating new part of name
+                             \d{6,6}   # 6 digits
+                             [_\.] # either . or _, indicating new part of name
                              """, re.VERBOSE)
     # We get the 0th index since there will be only one match per file, and
-    # throw away the first and last characters (a and -.)
+    # throw away the first and last characters (a and _.)
     return re.findall(scale_re, filename)[0][1:-1]
+
+def find_m(filename):
+    # Use a regular expression
+    mass_re = re.compile("""[sh]      # either stellar or halo mass
+                            m         # single m
+                            \d{1,2}  # 1 or two digits for first part of mass
+                            \.        # single period
+                            \d{2,2}  # 2 digits for frational part of mass
+                            [_\.] # either . or _, indicating new part of name
+                            """, re.VERBOSE)
+    # We get the 0th index since there will be only one match per file, and
+    # throw away the first two and last characters (sm and _.)
+    stripped_m = re.findall(mass_re, filename)[0][2:-1]
+    # we want them all to have the same number of digits, to add a zero if the
+    # initial digit is less than 10
+    if stripped_m[0] != "1":
+        return "0" + stripped_m
+    else:
+        return stripped_m
 
 def find_closest(item, list_of_items):
     # we assume the original list is strings, and is sorted
@@ -138,6 +157,8 @@ class Behroozi13(object):
 
 class UniverseMachine(object):
     data_dir = _get_data_path("universe_machine/data/")
+    sfh_dir = data_dir + "sfhs/"
+    smhm_dir = data_dir + "smhm/median_raw/"
 
     def __init__(self, m_halo, m_stellar, z):
         self.m_halo = m_halo
@@ -152,8 +173,8 @@ class UniverseMachine(object):
         # data/smhm/median_raw directory. Within this directory, the median
         # values are in the `sm_hm_a*` files, while the scatter is in the
         # `smhm_scatter_a*` files.
-        smhm_dir = self.data_dir + "smhm/median_raw/"
-        smhm_files = [f for f in os.listdir(smhm_dir)
+
+        smhm_files = [f for f in os.listdir(self.smhm_dir)
                       if f.startswith("smhm_a")]
 
         # create dictionaries to store the eventual tables
@@ -164,8 +185,8 @@ class UniverseMachine(object):
             this_a = find_a(f)
 
             # Then use astropy to make tables out of those files
-            smhm_file = smhm_dir + "smhm_a{}.dat".format(this_a)
-            smhm_scatter_file = smhm_dir + "smhm_scatter_a{}.dat".format(this_a)
+            smhm_file = self.smhm_dir + "smhm_a{}.dat".format(this_a)
+            smhm_scatter_file = self.smhm_dir + "smhm_scatter_a{}.dat".format(this_a)
 
             self.smhm_table[this_a] = table.Table.read(smhm_file,
                                                        format="ascii")
@@ -205,7 +226,8 @@ class UniverseMachine(object):
         smhm_log = self.smhm_table[a_smhm][colname].data
         # restrict to halo masses where the SMHM can be determined
         good_idxs = np.where(smhm_log < 0)
-        smhm = 10 ** smhm_log[good_idxs]
+        smhm_log = smhm_log[good_idxs]
+        smhm = 10 ** smhm_log
 
         halo_masses = 10 ** self.smhm_table[a_smhm]["HM(0)"].data[good_idxs]
         scatter_log = self.smhm_scatter_table[a_smhm][colname].data[good_idxs]
@@ -217,51 +239,90 @@ class UniverseMachine(object):
         return z_smhm, halo_masses, smhm, hi_lim, lo_lim
 
     def read_sfh(self):
-        file = _get_data_path("universe_machine/data/sfhs/sfh_hm12.00_a1.002310.dat")
-        with open(file, "r") as in_file:
-            a = []
-            sfh_all, err_up_all, err_down_all = [], [], []
-            sfh_cen, err_up_cen, err_down_cen = [], [], []
-            sfh_sat, err_up_sat, err_down_sat = [], [], []
+        # We will read in both the stellar mass and halo mass matched catalogs
+        sfh_hm_files = [f for f in os.listdir(self.sfh_dir)
+                        if f.startswith("sfh_hm")]
+        sfh_sm_files = [f for f in os.listdir(self.sfh_dir)
+                        if f.startswith("sfh_sm")]
+        all_files = sfh_hm_files + sfh_sm_files
 
-            for line in in_file:
-                if line.startswith("#"):
-                    continue
-                split_line = line.split()
+        # create dictionaries to store the eventual tables
+        self.sfhs_hm = collections.defaultdict(dict)
+        self.sfhs_sm = collections.defaultdict(dict)
 
-                a.append(float(split_line[0]))
+        for f in all_files:
+            this_a = find_a(f)
+            this_m = find_m(f)
 
-                sfh_all.append(float(split_line[1]))
-                err_up_all.append(float(split_line[2]))
-                err_down_all.append(float(split_line[3]))
+            if "sfh_sm" in f:
+                result_dict = self.sfhs_sm
+            elif "sfh_hm" in f:
+                result_dict = self.sfhs_hm
+            else:
+                raise ValueError
 
-                sfh_cen.append(float(split_line[10]))
-                err_up_cen.append(float(split_line[11]))
-                err_down_cen.append(float(split_line[12]))
+            # skip reading since it's really computationally expensive with so
+            # many files. for now just set things as None
+            result_dict[this_a][this_m] = None
 
-                sfh_sat.append(float(split_line[13]))
-                err_up_sat.append(float(split_line[14]))
-                err_down_sat.append(float(split_line[15]))
+    def _read_individual_sfh(self, prefix, a, m):
+        # Do the actual reading of the tables as needed, since this is
+        # computationally expensive
 
-        self.sfh_a = np.array(a)
-        self.sfh_z = a_to_z(self.sfh_a)
-        self.ages = z_to_age(self.sfh_z)
+        # strip off that extra zero we added earlier
+        m = m.lstrip("0")
+        # then load the correct file
+        sfh_file = self.sfh_dir + prefix + "{}_a{}.dat".format(m, a)
+        new_table = table.Table.read(sfh_file, format="ascii")
+        # add a redshift column. Columns aren't named well, unfortunately
+        new_table["z"] = a_to_z(new_table["col1"])
 
-        self.sfh_all = u.Quantity(sfh_all, "Msun/year")
-        self.sfh_err_up_all = u.Quantity(err_up_all, "Msun/year")
-        self.sfh_err_down_all = u.Quantity(err_down_all, "Msun/year")
-        self.sfh_up_bound_all = self.sfh_all + self.sfh_err_up_all
-        self.sfh_low_bound_all = self.sfh_all - self.sfh_err_down_all
+        # then put it where it belongs
+        if prefix == "sfh_sm":
+            self.sfhs_sm[a][m] = new_table
+        elif prefix == "sfh_hm":
+            self.sfhs_hm[a][m] = new_table
 
-        self.sfh_cen = u.Quantity(sfh_cen, "Msun/year")
-        self.sfh_err_up_cen = u.Quantity(err_up_cen, "Msun/year")
-        self.sfh_err_down_cen = u.Quantity(err_down_cen, "Msun/year")
-        self.sfh_up_bound_cen = self.sfh_cen + self.sfh_err_up_cen
-        self.sfh_low_bound_cen = self.sfh_cen - self.sfh_err_down_cen
 
-        self.sfh_sat = u.Quantity(sfh_sat, "Msun/year")
-        self.sfh_err_up_sat = u.Quantity(err_up_sat, "Msun/year")
-        self.sfh_err_down_sat = u.Quantity(err_down_sat, "Msun/year")
-        self.sfh_up_bound_sat = self.sfh_sat + self.sfh_err_up_sat
-        self.sfh_low_bound_sat = self.sfh_sat - self.sfh_err_down_sat
+    def get_sfh(self, match, z, m):
+        # Get the star formation history of a halo with mass m at redshift z
+        # the match keyword tells whether this value is stellar mass or halo
+        # mass
+        if match == "halo":
+            prefix = "sfh_hm"
+            sfh_dict = self.sfhs_hm
+        elif match == "stellar":
+            prefix = "sfh_sm"
+            sfh_dict = self.sfhs_sm
+        else:
+            raise ValueError
+
+        a = z_to_a(z)
+        # the find closest function expects a sorted list
+        a_sfh = find_closest(a, sorted(list(sfh_dict.keys())))
+        m_sfh = find_closest(np.log10(m), sorted(list(sfh_dict[a_sfh].keys())))
+
+        # get the appropriate table.
+        this_table = sfh_dict[a_sfh][m_sfh]
+        # we didn't initialize the tables in read-in, since there are so many of
+        # them it takes a long time. If we haven't already read in the table,
+        # do so now
+        if this_table is None:
+            self._read_individual_sfh(prefix, a_sfh, m_sfh)
+            this_table = sfh_dict[a_sfh][m_sfh]
+
+        # we want to return redshift, sfh, error boundaries
+        sfhs = this_table["col2"].data
+        # only keep the ones where there is data
+        good_idxs = np.where(sfhs > 0)
+        sfhs = sfhs[good_idxs]
+
+        redshifts = this_table["z"].data[good_idxs]
+        sfh_err_hi = this_table["col3"].data[good_idxs]
+        sfh_err_lo = this_table["col4"].data[good_idxs]
+
+        hi_boundary = sfhs + sfh_err_hi
+        lo_boundary = sfhs - sfh_err_lo
+        return redshifts, sfhs, hi_boundary, lo_boundary
+
 
