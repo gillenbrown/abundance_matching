@@ -160,11 +160,7 @@ class UniverseMachine(object):
     sfh_dir = data_dir + "sfhs/"
     smhm_dir = data_dir + "smhm/median_raw/"
 
-    def __init__(self, m_halo, m_stellar, z):
-        self.m_halo = m_halo
-        self.m_stellar = m_stellar
-        self.z = z
-        self.a = z_to_a(self.z)
+    def __init__(self):
         self.read_sfh()
         self.read_smhm()
 
