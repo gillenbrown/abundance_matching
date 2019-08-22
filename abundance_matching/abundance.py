@@ -307,7 +307,6 @@ class UniverseMachine(object):
             self._read_individual_sfh(prefix, a_sfh, m_sfh)
             this_table = sfh_dict[a_sfh][m_sfh]
 
-        print(this_table)
         # we want to return redshift, sfh, error boundaries
         sfhs = this_table["col2"].data
         # only keep the ones where there is data
