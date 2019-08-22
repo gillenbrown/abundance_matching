@@ -266,9 +266,9 @@ class UniverseMachine(object):
         # computationally expensive
 
         # strip off that extra zero we added earlier
-        m = m.lstrip("0")
+        m_file = m.lstrip("0")
         # then load the correct file
-        sfh_file = self.sfh_dir + prefix + "{}_a{}.dat".format(m, a)
+        sfh_file = self.sfh_dir + prefix + "{}_a{}.dat".format(m_file, a)
         new_table = table.Table.read(sfh_file, format="ascii")
         # add a redshift column. Columns aren't named well, unfortunately
         new_table["z"] = a_to_z(new_table["col1"])
@@ -307,6 +307,7 @@ class UniverseMachine(object):
             self._read_individual_sfh(prefix, a_sfh, m_sfh)
             this_table = sfh_dict[a_sfh][m_sfh]
 
+        print(this_table)
         # we want to return redshift, sfh, error boundaries
         sfhs = this_table["col2"].data
         # only keep the ones where there is data
